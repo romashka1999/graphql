@@ -30,6 +30,9 @@ function AddBook(props) {
 
     const sumbitForm = (e) => {
         e.preventDefault();
+        if(book.name === '' || book.authorId === '' || book.genre === '') {
+            return
+        }
         addBookMut({
             variables: {
                 name: book.name,
